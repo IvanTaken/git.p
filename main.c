@@ -9,9 +9,14 @@ double itteration(double,double*,int);
 
 double recursion(double,double*,int);
 
-double recursion(double x, double *arr, int n)
+double itteration(double x,double *array,int n)
 {
-    rec++;
-    if ( n > 1 ) return arr[n] + recursion( x, arr, n-1 ) * x;
-    return arr[0] * x + arr[1];
+    double sum = 0.0;
+    double cur_x = 1.0;
+    for(int i = n; i >= 0; i--)
+    {
+        if (i < n) cur_x *= x;
+        sum += array[i] * cur_x;
+    }
+    return sum;
 }
